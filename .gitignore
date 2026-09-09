@@ -7,3 +7,5 @@ db.sqlite3
 .env
 staticfiles/
 media/
+
+backend/.env
