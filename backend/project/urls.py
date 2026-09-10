@@ -1,3 +1,4 @@
+from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
@@ -13,6 +14,7 @@ router.register(r'customers', CustomerViewSet, basename='customer')
 router.register(r'orders', OrderViewSet, basename='order')
 
 urlpatterns = [
+     path('admin/', admin.site.urls),
     path('api/auth/register/', RegisterView.as_view(), name='auth-register'),
     path('api/auth/login/', TokenObtainPairView.as_view(), name='auth-login'),
     path('api/auth/token/refresh', TokenRefreshView.as_view(), name='token-refresh'),
