@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ProductService } from '../api/services';
 import { Plus, Search, AlertCircle, RefreshCw } from 'lucide-react';
-
+import Navbar from '../components/Navbar';
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -66,6 +66,8 @@ export default function Products() {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <div>
@@ -231,5 +233,6 @@ export default function Products() {
         </div>
       )}
     </div>
+    </>
   );
 }
